@@ -4,7 +4,7 @@ import { faCalendar, faUsers, faLightbulb } from '@fortawesome/free-solid-svg-ic
 
 const Home = () => {
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-black via-blue-900 to-black text-white font-sans p-8 space-y-20 overflow-x-hidden">
+    <div className="min-h-screen w-full bg-gradient-to-br from-blue-950 via-blue-900 to-black text-white font-sans p-8 space-y-20 overflow-x-hidden">
       
       {/* Hero Image */}
       <motion.div
@@ -28,8 +28,8 @@ const Home = () => {
         <h1 className="text-6xl font-extrabold">
           <span className="text-yellow-400">GENESIS</span> 2.0
         </h1>
-        <p className="text-blue-200 text-xl">Empowering Engineering Excellence through Innovation and Sustainability</p>
-        <p className="text-2xl font-semibold text-yellow-400">August 12 - 13, 2025</p>
+        <p className="text-blue-200 text-xl">HumAInity 2025: Where Intelligence Meets Intention</p>
+        <p className="text-2xl font-semibold text-yellow-400">July 31 & August 1, 2025</p>
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -109,52 +109,82 @@ const Home = () => {
           className="w-full lg:w-[300px] object-cover rounded-lg hidden lg:block"
         />
       </motion.div>
+      {/* Genesis 1.0 Recap Section */}
+<motion.div
+  initial={{ opacity: 0, y: 40 }}
+  animate={{ opacity: 1, y: 0 }}
+  className="bg-white/5 backdrop-blur-md rounded-xl p-10 mb-20 flex flex-col md:flex-row gap-10 items-center"
+>
+  <img
+    src="/images/genesis1.jpg" 
+    alt="Genesis 1.0 Group"
+    className="w-full md:w-[450px] h-auto object-cover rounded-lg shadow-lg"
+  />
 
-      {/* Event Highlights - Scrollable with Two Visible Cards */}
+  <div className="flex-1">
+    <h2 className="text-3xl font-bold text-yellow-400 mb-4">About Genesis 1.0</h2>
+    <p className="text-blue-100 leading-relaxed">
+      Genesis 1.0 was a two-day annual symposium organized by the IEEE-HKN Nu Eta Chapter, aimed at empowering students
+      with technical knowledge and sustainable development insights. Aligned with the United Nations' Sustainable
+      Development Goals (SDGs), the event featured expert tech talks, exhibitions, leadership sessions, and hands-on
+      workshops. It served as a powerful platform for students to cultivate innovation, professionalism, and ethical
+      engineering practices to make a lasting impact on society.
+    </p>
+  </div>
+</motion.div>
+
+      {/* Event Highlights - Tiled Layout with Buttons */}
 <div className="space-y-16">
-  <h2 className="text-4xl font-bold text-center underline decoration-yellow-400 decoration-4">Event Highlights</h2>
+  <h2 className="text-4xl font-bold text-center underline decoration-yellow-400 decoration-4">
+    Event Highlights
+  </h2>
 
   {/* Day 1 */}
   <div>
-    <h3 className="text-2xl font-bold text-yellow-400 mb-6">Day 1</h3>
-    <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 px-1">
+    <h3 className="text-2xl font-bold text-yellow-400 mb-6">Day 1: Ignite the Change</h3>
+    <div className="grid md:grid-cols-3 gap-8">
       {[
         {
-          title: "BIDWARS",
-          desc: "Outbid your rivals in a competitive business bidding simulation. Use market insight, economic planning, and negotiation to dominate the virtual economy.",
-          image: "/images/events/bidwars.jpg"
+          title: "Pitch for the Planet: SDG Innovation Expo",
+          desc: "Students showcase projects addressing one or more SDGs, judged for innovation, feasibility, and impact.",
+          image: "/images/events/sdg-pitch.jpg",
+          link: "#event-sdg" // <-- Add actual link here later
         },
         {
-          title: "CODEVERSE",
-          desc: "Engage in a high-speed programming contest. Solve logic-based problems under time pressure to prove your coding mettle and stand out among tech elites.",
-          image: "/images/events/codeverse.jpg"
+          title: "Code for Cause: The Humanitarian Hack-Sprint",
+          desc: "An individual coding challenge with real-world humanitarian twist problems (disaster, energy, health, etc.).",
+          image: "/images/events/code-humanity.jpg",
+          link: "#event-code"
         },
         {
-          title: "PROTOVESE Workshop",
-          desc: "Dive into the world of prototyping. Work with mentors and tools to turn raw ideas into tangible models—fast, functional, and future-ready.",
-          image: "/images/events/protovese.jpg"
-        },
-        {
-          title: "INTERVISTA 2.0",
-          desc: "Experience professional mock interviews. Get real-time feedback from experts and polish your soft skills, technical rounds, and resume presentation.",
-          image: "/images/events/intervista.jpg"
+          title: "Craft Your Digital Self: Branding Beyond Borders",
+          desc: "Hands-on workshop to help students design impactful resumes and LinkedIn profiles.",
+          image: "/images/events/linkedin-resume.jpg",
+          link: "#event-branding"
         }
       ].map((event, i) => (
         <div
           key={`day1-${i}`}
-          className="snap-center shrink-0 w-[85vw] sm:w-[48%] bg-white/10 backdrop-blur-md rounded-xl p-6 hover:scale-[1.02] transition-transform duration-300 flex flex-col gap-4 min-h-[320px]"
+          className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform duration-300"
         >
-          <div className="h-40 bg-white/5 rounded-lg overflow-hidden">
-            {/* Optional image placeholder */}
+          <div className="h-40 w-full bg-white/10">
             <img
               src={event.image}
               alt={event.title}
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="flex-1">
-            <h4 className="text-2xl font-bold text-yellow-400 mb-2">{event.title}</h4>
-            <p className="text-blue-200 text-sm leading-relaxed">{event.desc}</p>
+          <div className="p-6 flex flex-col justify-between min-h-[230px]">
+            <div>
+              <h4 className="text-xl font-bold text-yellow-400 mb-2">{event.title}</h4>
+              <p className="text-blue-200 text-sm leading-relaxed">{event.desc}</p>
+            </div>
+            <a
+              href={event.link}
+              className="mt-4 inline-block bg-yellow-400 text-blue-900 px-4 py-2 rounded-md text-sm font-semibold hover:bg-yellow-300 transition"
+            >
+              View Details
+            </a>
           </div>
         </div>
       ))}
@@ -163,44 +193,50 @@ const Home = () => {
 
   {/* Day 2 */}
   <div>
-    <h3 className="text-2xl font-bold text-yellow-400 mb-6">Day 2</h3>
-    <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 px-1">
+    <h3 className="text-2xl font-bold text-yellow-400 mb-6">Day 2: Think, Solve, Impact</h3>
+    <div className="grid md:grid-cols-3 gap-8">
       {[
         {
-          title: "SUSTAINABLE TECH EXPO",
-          desc: "Explore green technologies and sustainability-driven solutions. Featuring live demos, prototypes, and future-focused models from student innovators.",
-          image: "/images/events/sustaintech.jpg"
+          title: "GreenMind: Sustainable AI for a Better Tomorrow",
+          desc: "Introductory and practical sessions on AI that prioritize green computing, ethics, and inclusive intelligence for SDG-aligned solutions.",
+          image: "/images/events/ai-sustainable.jpg",
+          link: "#event-ai"
         },
         {
-          title: "TEASEBURST",
-          desc: "A brain-teasing event filled with quizzes, logic puzzles, and riddles designed to challenge and entertain the sharpest minds in tech.",
-          image: "/images/events/teaseburst.jpg"
+          title: "UrbanThink 2025: Designing Cities that Feel Human",
+          desc: "A challenge for students to reimagine urban spaces with sustainable, accessible, and human-first innovations rooted in SDG 11.",
+          image: "/images/events/smart-city.jpg",
+          link: "#event-smartcity"
         },
         {
-          title: "STARTUP PITCH FEST",
-          desc: "Step into the spotlight and pitch your groundbreaking startup ideas to a panel of mentors and investors. Receive feedback, funding tips, and more.",
-          image: "/images/events/startupfest.jpg"
-        },
-        {
-          title: "AUTOMAX Workshop",
-          desc: "Hands-on session with automation kits. Build bots, code controllers, and explore real-world applications of IoT and robotics technologies.",
-          image: "/images/events/automax.jpg"
+          title: "Voices of Fire: Igniting Purpose-Driven Careers with IEEE",
+          desc: "A dynamic panel where IEEE visionaries share transformative insights on building careers fueled by innovation, impact, and global responsibility.",
+          image: "/images/events/panel-discussion.jpg",
+          link: "#event-panel"
         }
       ].map((event, i) => (
         <div
           key={`day2-${i}`}
-          className="snap-center shrink-0 w-[85vw] sm:w-[48%] bg-white/10 backdrop-blur-md rounded-xl p-6 hover:scale-[1.02] transition-transform duration-300 flex flex-col gap-4 min-h-[320px]"
+          className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform duration-300"
         >
-          <div className="h-40 bg-white/5 rounded-lg overflow-hidden">
+          <div className="h-40 w-full bg-white/10">
             <img
               src={event.image}
               alt={event.title}
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="flex-1">
-            <h4 className="text-2xl font-bold text-yellow-400 mb-2">{event.title}</h4>
-            <p className="text-blue-200 text-sm leading-relaxed">{event.desc}</p>
+          <div className="p-6 flex flex-col justify-between min-h-[230px]">
+            <div>
+              <h4 className="text-xl font-bold text-yellow-400 mb-2">{event.title}</h4>
+              <p className="text-blue-200 text-sm leading-relaxed">{event.desc}</p>
+            </div>
+            <a
+              href={event.link}
+              className="mt-4 inline-block bg-yellow-400 text-blue-900 px-4 py-2 rounded-md text-sm font-semibold hover:bg-yellow-300 transition"
+            >
+              View Details
+            </a>
           </div>
         </div>
       ))}

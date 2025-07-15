@@ -4,13 +4,13 @@ import { faGlobe, faUsers, faLightbulb } from '@fortawesome/free-solid-svg-icons
 
 const About = () => {
   return (
-    <div className="container mx-auto px-4 py-24">
+    <div className="min-h-screen w-full bg-gradient-to-br from-blue-950 via-blue-900 to-black text-white px-4 py-24">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="text-center mb-12"
       >
-        <h1 className="text-4xl font-bold text-white mb-6">About Genesis 2.0</h1>
+        <h1 className="text-4xl font-bold mb-6">About Genesis 2.0</h1>
         <p className="text-xl text-blue-200 max-w-2xl mx-auto">
           A two-day symposium by IEEE-HKN Nu Eta Chapter, designed to empower engineering students
           with technical expertise, professional skills, and ethical values.
@@ -42,8 +42,8 @@ const About = () => {
             transition={{ delay: index * 0.2 }}
             className="bg-white/10 backdrop-blur-lg rounded-xl p-6 text-center"
           >
-            <FontAwesomeIcon icon={feature.icon} className="text-4xl text-accent mb-4" />
-            <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
+            <FontAwesomeIcon icon={feature.icon} className="text-4xl text-yellow-400 mb-4" />
+            <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
             <p className="text-blue-200">{feature.description}</p>
           </motion.div>
         ))}
@@ -55,7 +55,7 @@ const About = () => {
         transition={{ delay: 0.6 }}
         className="bg-white/10 backdrop-blur-lg rounded-xl p-8"
       >
-        <h2 className="text-2xl font-bold text-white mb-4">Event Objectives</h2>
+        <h2 className="text-2xl font-bold mb-4">Event Objectives</h2>
         <ul className="space-y-4">
           {[
             "Enhance technical and professional skills through hands-on workshops",
@@ -70,7 +70,7 @@ const About = () => {
               transition={{ delay: 0.8 + index * 0.1 }}
               className="flex items-center text-blue-200"
             >
-              <span className="w-2 h-2 bg-accent rounded-full mr-3"></span>
+              <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
               {objective}
             </motion.li>
           ))}

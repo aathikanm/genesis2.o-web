@@ -55,11 +55,11 @@ const Schedule = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-24">
+    <div className="min-h-screen w-full bg-gradient-to-br from-blue-950 via-blue-900 to-black text-white px-6 py-24">
       <motion.h1 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-4xl font-bold text-white text-center mb-12"
+        className="text-4xl font-bold text-center mb-12"
       >
         Event Schedule
       </motion.h1>
@@ -73,7 +73,7 @@ const Schedule = () => {
             transition={{ delay: dayIndex * 0.2 }}
             className="bg-white/10 backdrop-blur-lg rounded-xl p-6"
           >
-            <h2 className="text-2xl font-bold text-accent mb-6">{day.day}</h2>
+            <h2 className="text-2xl font-bold text-yellow-400 mb-6">{day.day}</h2>
             <div className="space-y-6">
               {day.events.map((event, eventIndex) => (
                 <motion.div
@@ -81,7 +81,7 @@ const Schedule = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: dayIndex * 0.2 + eventIndex * 0.1 }}
-                  className="border-l-2 border-accent pl-4"
+                  className="border-l-2 border-yellow-400 pl-4"
                 >
                   <p className="text-blue-200 text-sm">{event.time}</p>
                   <h3 className="text-white font-bold mt-1">{event.name}</h3>
