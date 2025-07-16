@@ -1,11 +1,60 @@
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faUsers, faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import React, { useEffect, useState } from 'react';
+
+const CountdownTimer = () => {
+  const eventDate = new Date("2025-07-31T08:30:00");
+  const [timeLeft, setTimeLeft] = useState({});
+
+  const calculateTimeLeft = () => {
+    const difference = +eventDate - +new Date();
+    let timeLeft = {};
+
+    if (difference > 0) {
+      timeLeft = {
+        Days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        Hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        Minutes: Math.floor((difference / 1000 / 60) % 60),
+        Seconds: Math.floor((difference / 1000) % 60)
+      };
+    } else {
+      timeLeft = null;
+    }
+
+    return timeLeft;
+  };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  if (!timeLeft) {
+    return (
+      <div className="text-lg text-yellow-300 font-semibold mt-2">
+        🎉 The Event Has Started!
+      </div>
+    );
+  }
+
+  return (
+    <div className="text-lg text-yellow-300 font-semibold mt-4 flex flex-wrap gap-6 justify-center">
+      {Object.entries(timeLeft).map(([label, value]) => (
+        <div key={label} className="flex flex-col items-center">
+          <span className="text-2xl">{value.toString().padStart(2, '0')}</span>
+          <span className="text-sm">{label}</span>
+        </div>
+      ))}
+    </div>
+  );
+};
 
 const Home = () => {
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-blue-950 via-blue-900 to-black text-white font-sans p-8 space-y-20 overflow-x-hidden">
-      
       {/* Hero Image */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -20,7 +69,6 @@ const Home = () => {
       </motion.div>
 
       {/* Hero Section */}
-      
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -31,6 +79,9 @@ const Home = () => {
         </h1>
         <p className="text-blue-200 text-xl">HumAInity 2025: Where Intelligence Meets Intention</p>
         <p className="text-2xl font-semibold text-yellow-400">July 31 & August 1, 2025</p>
+
+        <CountdownTimer />
+
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
