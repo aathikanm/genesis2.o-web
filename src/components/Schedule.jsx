@@ -6,24 +6,39 @@ const Schedule = () => {
       day: "Day 1",
       events: [
         {
-          time: "09:00 AM - 10:30 AM",
-          name: "BIDWARS",
-          description: "Strategic bidding competition enhancing entrepreneurial skills"
+          time: "08:30 AM - 09:00 AM",
+          name: "REGISTRATION",
+          description: "ID card and registration at the venue"
         },
         {
-          time: "11:00 AM - 12:30 PM",
+          time: "09:30 AM - 12:30 PM",
+          name: "INAUGURAL CEREMONY",
+          description: "Welcome address, IEEE keynote & induction of new HKN members"
+        },
+        {
+          time: "12:30 PM - 01:15 PM",
+          name: "LUNCH BREAK",
+          description: "Lunch provided to all participants"
+        },
+        {
+          time: "01:30 PM - 03:30 PM",
+          name: "PROJECT PRESENTATION",
+          description: "Parallel event showcasing student projects"
+        },
+        {
+          time: "01:30 PM - 03:30 PM",
           name: "CODEVERSE",
-          description: "Coding challenge developing problem-solving skills"
+          description: "Parallel coding event hosted via HackerRank"
         },
         {
-          time: "02:00 PM - 03:30 PM",
-          name: "PROTOVESE Workshop",
-          description: "Hands-on session on prototype development"
+          time: "02:00 PM - 03:00 PM",
+          name: "LINKEDIN & RESUME WORKSHOP",
+          description: "Hands-on parallel session on resume building and LinkedIn profile creation"
         },
         {
-          time: "04:00 PM - 05:30 PM",
-          name: "INTERVISTA 2.0",
-          description: "Mock interview sessions with industry experts"
+          time: "01:30 PM - 03:30 PM",
+          name: "STALLS",
+          description: "Exhibition by Section Best Chapter, EPICS & SIGHT"
         }
       ]
     },
@@ -31,24 +46,44 @@ const Schedule = () => {
       day: "Day 2",
       events: [
         {
-          time: "09:00 AM - 10:30 AM",
-          name: "SUSTAINABLE TECH EXPO",
-          description: "Showcase of SDG-aligned projects"
+          time: "09:30 AM - 11:00 AM",
+          name: "GREEN AI WORKSHOP",
+          description: "Parallel workshop on sustainable AI applications"
         },
         {
-          time: "11:00 AM - 12:30 PM",
-          name: "TEASEBURST",
-          description: "Tech teaser video creation challenge"
+          time: "09:30 AM - 11:00 AM",
+          name: "SMART CITIES IDEATHON",
+          description: "Parallel ideation event focused on smart city solutions"
         },
         {
-          time: "02:00 PM - 03:30 PM",
-          name: "STARTUP PITCH FEST",
-          description: "Startup pitching and networking session"
+          time: "11:00 AM - 11:30 AM",
+          name: "BREAK",
+          description: "Refreshments provided"
         },
         {
-          time: "04:00 PM - 05:30 PM",
-          name: "AUTOMAX Workshop",
-          description: "Workshop on AI & automation technologies"
+          time: "11:30 AM - 12:30 PM",
+          name: "STALLS",
+          description: "Section Best Chapter, EPICS & SIGHT exhibitions"
+        },
+        {
+          time: "12:30 PM - 01:15 PM",
+          name: "LUNCH BREAK",
+          description: "Lunch provided to all attendees"
+        },
+        {
+          time: "01:30 PM - 02:30 PM",
+          name: "PANEL DISCUSSION",
+          description: "Session with alumni and experts (moderated)"
+        },
+        {
+          time: "02:30 PM - 04:00 PM",
+          name: "VALEDICTORY",
+          description: "Closing ceremony and prize distribution"
+        },
+        {
+          time: "04:00 PM",
+          name: "REFRESHMENTS",
+          description: "Juice & snacks served post event"
         }
       ]
     }
@@ -77,7 +112,7 @@ const Schedule = () => {
             <div className="space-y-6">
               {day.events.map((event, eventIndex) => (
                 <motion.div
-                  key={event.name}
+                  key={event.name + event.time}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: dayIndex * 0.2 + eventIndex * 0.1 }}
