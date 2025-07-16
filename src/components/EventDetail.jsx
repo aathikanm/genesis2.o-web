@@ -8,17 +8,17 @@ const eventDetails = {
     image: "/images/events/sdg-pitch.jpg",
     focus: "Foundational growth, SDG alignment, career empowerment.",
     objective: "Highlight student-led sustainable innovation.",
-    date: "July 31, 2025 | 1:30 PM - 3:30 PM",
-    venue: "Expo Arena"
+    date: "July 31, 2025 | 1:30 PM - 4:00 PM",
+    venue: "Sigma"
   },
   codeforcause: {
     title: "Code for Cause: The Humanitarian Hack-Sprint",
     description: "An individual coding challenge with real-world humanitarian twist problems (disaster, energy, health, etc.)",
-    image: "/images/events/code-humanity.jpg",
+    image: "/images/code.png",
     focus: "Foundational growth, SDG alignment, career empowerment.",
     objective: "Promote problem-solving for social good.",
-    date: "July 31, 2025 | 1:30 PM - 3:30 PM",
-    venue: "Coding Lab"
+    date: "July 31, 2025 | 1:30 PM - 4:00 PM",
+    venue: "Alpha"
   },
   brandingbeyondborders: {
     title: "Craft Your Digital Self: Branding Beyond Borders",
@@ -26,17 +26,18 @@ const eventDetails = {
     image: "/images/events/linkedin-resume.jpg",
     focus: "Foundational growth, SDG alignment, career empowerment.",
     objective: "Empower students to build strong digital presence.",
-    date: "July 31, 2025 | 1:30 PM - 3:30 PM",
-    venue: "Career Hub"
+    date: "July 31, 2025 | 2:00 PM - 3:00 PM",
+    venue: "Beta"
   },
   greenmind: {
+
     title: "GreenMind: Sustainable AI for a Better Tomorrow",
     description: "Introductory and practical sessions on AI that prioritize green computing, ethics, and inclusive intelligence for SDG-aligned solutions.",
     image: "/images/events/ai-sustainable.jpg",
     focus: "Tech-driven innovation, sustainability, and purpose-led leadership.",
     objective: "Introduce students to sustainable AI principles.",
     date: "August 1, 2025 | 9:30 AM - 11:00 AM",
-    venue: "AI Lab"
+    venue: "Alpha"
   },
   urbanthink2025: {
     title: "UrbanThink 2025: Designing Cities that Feel Human",
@@ -45,7 +46,7 @@ const eventDetails = {
     focus: "Tech-driven innovation, sustainability, and purpose-led leadership.",
     objective: "Promote SDG-based urban ideation.",
     date: "August 1, 2025 | 9:30 AM - 11:00 AM",
-    venue: "Design Studio"
+    venue: "Beta"
   },
   voicesoffire: {
     title: "Voices of Fire: Igniting Purpose-Driven Careers with IEEE",
@@ -54,7 +55,7 @@ const eventDetails = {
     focus: "Tech-driven innovation, sustainability, and purpose-led leadership.",
     objective: "Inspire students through leadership journeys.",
     date: "August 1, 2025 | 1:30 PM - 2:30 PM",
-    venue: "Main Auditorium"
+    venue: "Sigma"
   }
 };
 
@@ -80,8 +81,9 @@ const EventDetail = () => {
         <img
           src={event.image}
           alt={event.title}
-          className="w-full h-[300px] object-cover rounded-lg shadow-xl"
+          className="w-full h-auto max-h-[500px] object-contain rounded-2xl shadow-lg mx-auto"
         />
+
         <h1 className="text-4xl font-bold text-yellow-400">{event.title}</h1>
         <p className="text-blue-200 text-lg">{event.description}</p>
 
