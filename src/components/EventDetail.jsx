@@ -8,8 +8,7 @@ const eventDetails = {
     image: "/images/events/sdg-pitch.jpg",
     focus: "Foundational growth, SDG alignment, career empowerment.",
     objective: "Highlight student-led sustainable innovation.",
-    date: "July 31, 2025",
-    
+    date: "July 31, 2025 | 1:30 PM - 3:30 PM",
     venue: "Expo Arena"
   },
   codeforcause: {
@@ -18,8 +17,7 @@ const eventDetails = {
     image: "/images/events/code-humanity.jpg",
     focus: "Foundational growth, SDG alignment, career empowerment.",
     objective: "Promote problem-solving for social good.",
-    date: "July 31, 2025",
-    
+    date: "July 31, 2025 | 1:30 PM - 3:30 PM",
     venue: "Coding Lab"
   },
   brandingbeyondborders: {
@@ -28,8 +26,7 @@ const eventDetails = {
     image: "/images/events/linkedin-resume.jpg",
     focus: "Foundational growth, SDG alignment, career empowerment.",
     objective: "Empower students to build strong digital presence.",
-    date: "July 31, 2025",
-    
+    date: "July 31, 2025 | 1:30 PM - 3:30 PM",
     venue: "Career Hub"
   },
   greenmind: {
@@ -38,7 +35,7 @@ const eventDetails = {
     image: "/images/events/ai-sustainable.jpg",
     focus: "Tech-driven innovation, sustainability, and purpose-led leadership.",
     objective: "Introduce students to sustainable AI principles.",
-    date: "August 1, 2025",
+    date: "August 1, 2025 | 9:30 AM - 11:00 AM",
     venue: "AI Lab"
   },
   urbanthink2025: {
@@ -47,7 +44,7 @@ const eventDetails = {
     image: "/images/events/smart-city.jpg",
     focus: "Tech-driven innovation, sustainability, and purpose-led leadership.",
     objective: "Promote SDG-based urban ideation.",
-    date: "August 1, 2025",
+    date: "August 1, 2025 | 9:30 AM - 11:00 AM",
     venue: "Design Studio"
   },
   voicesoffire: {
@@ -56,7 +53,7 @@ const eventDetails = {
     image: "/images/events/panel-discussion.jpg",
     focus: "Tech-driven innovation, sustainability, and purpose-led leadership.",
     objective: "Inspire students through leadership journeys.",
-    date: "August 1, 2025",
+    date: "August 1, 2025 | 1:30 PM - 2:30 PM",
     venue: "Main Auditorium"
   }
 };
@@ -91,7 +88,7 @@ const EventDetail = () => {
         <div className="space-y-4 text-blue-100">
           <p><strong className="text-yellow-400">Focus:</strong> {event.focus}</p>
           <p><strong className="text-yellow-400">Objective:</strong> {event.objective}</p>
-          <p><strong className="text-yellow-400">Date:</strong> {event.date}</p>
+          <p><strong className="text-yellow-400">Date & Time:</strong> {event.date}</p>
           <p><strong className="text-yellow-400">Venue:</strong> {event.venue}</p>
         </div>
 
