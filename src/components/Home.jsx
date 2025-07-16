@@ -1,58 +1,33 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faUsers, faLightbulb } from '@fortawesome/free-solid-svg-icons';
-import React, { useEffect, useState } from 'react';
-
-const CountdownTimer = () => {
-  const eventDate = new Date("2025-07-31T08:30:00");
-  const [timeLeft, setTimeLeft] = useState({});
-
-  const calculateTimeLeft = () => {
-    const difference = +eventDate - +new Date();
-    let timeLeft = {};
-
-    if (difference > 0) {
-      timeLeft = {
-        Days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        Hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        Minutes: Math.floor((difference / 1000 / 60) % 60),
-        Seconds: Math.floor((difference / 1000) % 60)
-      };
-    } else {
-      timeLeft = null;
-    }
-
-    return timeLeft;
-  };
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
-
-  if (!timeLeft) {
-    return (
-      <div className="text-lg text-yellow-300 font-semibold mt-2">
-        🎉 The Event Has Started!
-      </div>
-    );
-  }
-
-  return (
-    <div className="text-lg text-yellow-300 font-semibold mt-4 flex flex-wrap gap-6 justify-center">
-      {Object.entries(timeLeft).map(([label, value]) => (
-        <div key={label} className="flex flex-col items-center">
-          <span className="text-2xl">{value.toString().padStart(2, '0')}</span>
-          <span className="text-sm">{label}</span>
-        </div>
-      ))}
-    </div>
-  );
-};
 
 const Home = () => {
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  useEffect(() => {
+    const targetDate = new Date("2025-07-31T00:00:00");
+    const interval = setInterval(() => {
+      const now = new Date();
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+        clearInterval(interval);
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      } else {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60),
+        });
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-blue-950 via-blue-900 to-black text-white font-sans p-8 space-y-20 overflow-x-hidden">
       {/* Hero Image */}
@@ -80,15 +55,37 @@ const Home = () => {
         <p className="text-blue-200 text-xl">HumAInity 2025: Where Intelligence Meets Intention</p>
         <p className="text-2xl font-semibold text-yellow-400">July 31 & August 1, 2025</p>
 
-        <CountdownTimer />
+        {/* Countdown Timer Only */}
+<div className="w-full max-w-md mx-auto text-center bg-white/10 backdrop-blur-lg rounded-2xl px-6 py-8 sm:py-10 space-y-6 shadow-lg mt-8">
+  <div className="flex justify-center gap-6 sm:gap-10 text-white text-2xl sm:text-3xl font-bold">
+    <div className="flex flex-col items-center">
+      <span>{timeLeft.days.toString().padStart(2, '0')}</span>
+      <span className="text-sm sm:text-base font-medium text-blue-200">Days</span>
+    </div>
+    <div className="flex flex-col items-center">
+      <span>{timeLeft.hours.toString().padStart(2, '0')}</span>
+      <span className="text-sm sm:text-base font-medium text-blue-200">Hours</span>
+    </div>
+    <div className="flex flex-col items-center">
+      <span>{timeLeft.minutes.toString().padStart(2, '0')}</span>
+      <span className="text-sm sm:text-base font-medium text-blue-200">Minutes</span>
+    </div>
+    <div className="flex flex-col items-center">
+      <span>{timeLeft.seconds.toString().padStart(2, '0')}</span>
+      <span className="text-sm sm:text-base font-medium text-blue-200">Seconds</span>
+    </div>
+  </div>
 
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="bg-yellow-400 text-blue-900 px-10 py-3 rounded-full font-bold text-lg hover:bg-yellow-300"
-        >
-          Register Now
-        </motion.button>
+  {/* Register Button */}
+  <motion.button
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className="bg-yellow-400 text-blue-900 px-10 py-4 rounded-full font-bold text-lg sm:text-xl shadow-md hover:bg-yellow-300 transition"
+  >
+    Register Now
+  </motion.button>
+</div>
+
       </motion.div>
 
       {/* Key Features */}
