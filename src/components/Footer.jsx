@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   return (
@@ -14,13 +14,13 @@ const Footer = () => {
           </div>
           
           <div className="flex space-x-6">
-            <a href="#" className="text-blue-200 hover:text-accent transition-colors">
+            <a href="https://www.linkedin.com/company/nu-eta/" className="text-blue-200 hover:text-accent transition-colors">
               <FontAwesomeIcon icon={faLinkedin} size="lg" />
             </a>
-            <a href="#" className="text-blue-200 hover:text-accent transition-colors">
-              <FontAwesomeIcon icon={faTwitter} size="lg" />
+            <a href="https://www.facebook.com/share/1AeNz8MuXw/" className="text-blue-200 hover:text-accent transition-colors">
+              <FontAwesomeIcon icon={faFacebook} size="lg" />
             </a>
-            <a href="#" className="text-blue-200 hover:text-accent transition-colors">
+            <a href="https://www.instagram.com/sec_hkn?igsh=ZGFmY25hbWE3eHo3" className="text-blue-200 hover:text-accent transition-colors">
               <FontAwesomeIcon icon={faInstagram} size="lg" />
             </a>
           </div>
