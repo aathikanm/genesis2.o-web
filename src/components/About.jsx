@@ -4,7 +4,7 @@ import { faGlobe, faUsers, faLightbulb } from '@fortawesome/free-solid-svg-icons
 
 const About = () => {
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-blue-950 via-blue-900 to-black text-white px-4 py-24">
+    <div className="min-h-screen w-full bg-[#123A94] text-white px-4 pt-[80px] pb-24">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -55,7 +55,7 @@ const About = () => {
         transition={{ delay: 0.6 }}
         className="bg-white/10 backdrop-blur-lg rounded-xl p-8"
       >
-        <h2 className="text-2xl font-bold mb-4">Event Objectives</h2>
+        <h2 className="text-2xl font-bold mb-4 text-yellow-400">Event Objectives</h2>
         <ul className="space-y-4">
           {[
             "Enhance technical and professional skills through hands-on workshops",

@@ -8,6 +8,7 @@ import Schedule from './components/Schedule';
 import About from './components/About';
 import Footer from './components/Footer';
 import BackgroundAnimation from './components/BackgroundAnimation';
+import EventDetail from './components/EventDetail';
 
 function App() {
   useEffect(() => {
@@ -26,6 +27,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/about" element={<About />} />
+         <Route path="/events/:slug" element={<EventDetail />} />
+
         </Routes>
         <Footer />
       </div>

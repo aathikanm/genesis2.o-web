@@ -55,7 +55,7 @@ const Schedule = () => {
   ];
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-blue-950 via-blue-900 to-black text-white px-6 py-24">
+    <div className="min-h-screen w-full bg-[#123A94] text-white font-sans pt-[80px] px-6 pb-24">
       <motion.h1 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
