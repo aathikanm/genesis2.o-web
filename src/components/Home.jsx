@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faUsers, faLightbulb } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-   <div className="min-h-screen w-full bg-[#123A94] text-white font-sans pt-[80px] px-8 pb-8 space-y-20 overflow-x-hidden">
-
+    <div className="min-h-screen w-full bg-gradient-to-br from-blue-950 via-blue-900 to-black text-white font-sans p-8 space-y-20 overflow-x-hidden">
+      
       {/* Hero Image */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -21,6 +20,7 @@ const Home = () => {
       </motion.div>
 
       {/* Hero Section */}
+      
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -75,162 +75,181 @@ const Home = () => {
       </div>
 
       {/* Sairam Institution Section */}
-<motion.div
-  initial={{ opacity: 0, y: 40 }}
-  animate={{ opacity: 1, y: 0 }}
-  className="bg-white/5 backdrop-blur-md rounded-xl p-10 mb-20 flex flex-col lg:flex-row gap-10"
->
-  <img
-    src="/images/founder.png"
-    alt="MJF. Ln. Leo Muthu"
-    className="w-full lg:w-[300px] object-contain rounded-lg"
-  />
-
-  <div className="flex-1">
-    <h2 className="text-3xl font-bold text-yellow-400 mb-4">
-      Sri Sairam Engineering College
-    </h2>
-    <p className="text-blue-100 leading-relaxed mb-6">
-      Established in 1995 by <strong>MJF.Ln.Leo Muthu</strong>, Chairman of Sapthagiri Educational Trust,
-      Sri Sairam Engineering College is a premier non-profitable, non-minority institution.
-      With a commitment to excellence, the institution spans over <strong>300 acres</strong> and houses
-      top-tier laboratories, digital classrooms, a modern library, and a superlative sports complex.
-      Known for fostering innovation and sustainability, it has become one of India’s leading engineering colleges.
-      Its sprawling campus includes state-of-the-art buildings, auditoriums, hostels, and recreational facilities—
-      all dedicated to nurturing technical excellence and holistic growth.
-    </p>
-    <a
-  href="https://sairam.edu.in/"
-  className="bg-yellow-400 text-blue-900 px-6 py-2 rounded-md font-bold hover:bg-yellow-300 transition inline-block"
->
-  Learn More
-</a>
-
-  </div>
-
-  <img
-    src="/images/campus.png"
-    alt="Sairam Campus"
-    className="w-full lg:w-[300px] object-cover rounded-lg hidden lg:block"
-  />
-</motion.div>
-
-      {/* Genesis 1.0 Recap */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-white/5 backdrop-blur-md rounded-xl p-10 mb-20 flex flex-col md:flex-row gap-10 items-center"
+        className="bg-white/5 backdrop-blur-md rounded-xl p-10 mb-20 flex flex-col lg:flex-row gap-10"
       >
         <img
-          src="/images/genesis1.jpg"
-          alt="Genesis 1.0"
-          className="w-full md:w-[450px] rounded-lg shadow-lg"
+          src="/images/founder.png"
+          alt="MJF. Ln. Leo Muthu"
+          className="w-full lg:w-[300px] object-contain rounded-lg"
         />
+
         <div className="flex-1">
-          <h2 className="text-3xl font-bold text-yellow-400 mb-4">About Genesis 1.0</h2>
-          <p className="text-blue-100 leading-relaxed">
-            Genesis 1.0 was a two-day symposium organized by the IEEE-HKN Nu Eta Chapter, empowering students with tech
-            and sustainability insights. It included expert talks, exhibitions, workshops, and leadership sessions.
+          <h2 className="text-3xl font-bold text-yellow-400 mb-4">
+            Sri Sairam Engineering College
+          </h2>
+          <p className="text-blue-100 leading-relaxed mb-6">
+            Established in 1995 by <strong>MJF.Ln.Leo Muthu</strong>, Chairman of Sapthagiri Educational Trust,
+            Sri Sairam Engineering College is a premier non-profitable, non-minority institution.
+            With a commitment to excellence, the institution spans over <strong>300 acres</strong> and houses
+            top-tier laboratories, digital classrooms, a modern library, and a superlative sports complex.
+            Known for fostering innovation and sustainability, it has become one of India’s leading engineering colleges.
+            Its sprawling campus includes state-of-the-art buildings, auditoriums, hostels, and recreational facilities—
+            all dedicated to nurturing technical excellence and holistic growth.
           </p>
+          <button className="bg-yellow-400 text-blue-900 px-6 py-2 rounded-md font-bold hover:bg-yellow-300 transition">
+            Learn More
+          </button>
         </div>
+
+        <img
+          src="/images/campus.png"
+          alt="Sairam Campus"
+          className="w-full lg:w-[300px] object-cover rounded-lg hidden lg:block"
+        />
       </motion.div>
+      {/* Genesis 1.0 Recap Section */}
+<motion.div
+  initial={{ opacity: 0, y: 40 }}
+  animate={{ opacity: 1, y: 0 }}
+  className="bg-white/5 backdrop-blur-md rounded-xl p-10 mb-20 flex flex-col md:flex-row gap-10 items-center"
+>
+  <img
+    src="/images/genesis1.jpg" 
+    alt="Genesis 1.0 Group"
+    className="w-full md:w-[450px] h-auto object-cover rounded-lg shadow-lg"
+  />
 
-      {/* Event Highlights - Day 1 & Day 2 */}
-      <div className="space-y-16">
-        <h2 className="text-4xl font-bold text-center underline decoration-yellow-400 decoration-4">
-          Event Highlights
-        </h2>
+  <div className="flex-1">
+    <h2 className="text-3xl font-bold text-yellow-400 mb-4">About Genesis 1.0</h2>
+    <p className="text-blue-100 leading-relaxed">
+      Genesis 1.0 was a two-day annual symposium organized by the IEEE-HKN Nu Eta Chapter, aimed at empowering students
+      with technical knowledge and sustainable development insights. Aligned with the United Nations' Sustainable
+      Development Goals (SDGs), the event featured expert tech talks, exhibitions, leadership sessions, and hands-on
+      workshops. It served as a powerful platform for students to cultivate innovation, professionalism, and ethical
+      engineering practices to make a lasting impact on society.
+    </p>
+  </div>
+</motion.div>
 
-        {/* Day 1 */}
-        <div>
-          <h3 className="text-2xl font-bold text-yellow-400 mb-6">Day 1: Ignite the Change</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Pitch for the Planet: SDG Innovation Expo",
-                desc: "Students showcase SDG-based projects judged for innovation and impact.",
-                image: "/images/events/sdg-pitch.jpg",
-                slug: "sdginnovationexpo"
-              },
-              {
-                title: "Code for Cause: The Humanitarian Hack-Sprint",
-                desc: "Coding challenge with humanitarian-themed problems (disaster, energy, health).",
-                image: "/images/events/code-humanity.jpg",
-                slug: "codeforcause"
-              },
-              {
-                title: "Craft Your Digital Self: Branding Beyond Borders",
-                desc: "Hands-on LinkedIn and resume building workshop.",
-                image: "/images/events/linkedin-resume.jpg",
-                slug: "brandingbeyondborders"
-              }
-            ].map((event, i) => (
-              <div key={i} className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform duration-300">
-                <div className="h-40 w-full bg-white/10">
-                  <img src={event.image} alt={event.title} className="w-full h-full object-cover" />
-                </div>
-                <div className="p-6 flex flex-col justify-between min-h-[230px]">
-                  <div>
-                    <h4 className="text-xl font-bold text-yellow-400 mb-2">{event.title}</h4>
-                    <p className="text-blue-200 text-sm">{event.desc}</p>
-                  </div>
-                  <Link
-                    to={`/events/${event.slug}`}
-                    className="mt-4 inline-block bg-yellow-400 text-blue-900 px-4 py-2 rounded-md text-sm font-semibold hover:bg-yellow-300 transition"
-                  >
-                    View Details
-                  </Link>
-                </div>
-              </div>
-            ))}
+      
+      {/* Event Highlights - Tiled Layout with Buttons */}
+<div className="space-y-16">
+  <h2 className="text-4xl font-bold text-center underline decoration-yellow-400 decoration-4">
+    Event Highlights
+  </h2>
+
+  {/* Day 1 */}
+  <div>
+    <h3 className="text-2xl font-bold text-yellow-400 mb-6">Day 1: Ignite the Change</h3>
+    <div className="grid md:grid-cols-3 gap-8">
+      {[
+        {
+          title: "Pitch for the Planet: SDG Innovation Expo",
+          desc: "Students showcase projects addressing one or more SDGs, judged for innovation, feasibility, and impact.",
+          image: "/images/events/sdg-pitch.jpg",
+          link: "#event-sdg" // <-- Add actual link here later
+        },
+        {
+          title: "Code for Cause: The Humanitarian Hack-Sprint",
+          desc: "An individual coding challenge with real-world humanitarian twist problems (disaster, energy, health, etc.).",
+          image: "/images/events/code-humanity.jpg",
+          link: "#event-code"
+        },
+        {
+          title: "Craft Your Digital Self: Branding Beyond Borders",
+          desc: "Hands-on workshop to help students design impactful resumes and LinkedIn profiles.",
+          image: "/images/events/linkedin-resume.jpg",
+          link: "#event-branding"
+        }
+      ].map((event, i) => (
+        <div
+          key={`day1-${i}`}
+          className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform duration-300"
+        >
+          <div className="h-40 w-full bg-white/10">
+            <img
+              src={event.image}
+              alt={event.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="p-6 flex flex-col justify-between min-h-[230px]">
+            <div>
+              <h4 className="text-xl font-bold text-yellow-400 mb-2">{event.title}</h4>
+              <p className="text-blue-200 text-sm leading-relaxed">{event.desc}</p>
+            </div>
+            <a
+              href={event.link}
+              className="mt-4 inline-block bg-yellow-400 text-blue-900 px-4 py-2 rounded-md text-sm font-semibold hover:bg-yellow-300 transition"
+            >
+              View Details
+            </a>
           </div>
         </div>
+      ))}
+    </div>
+  </div>
 
-        {/* Day 2 */}
-        <div>
-          <h3 className="text-2xl font-bold text-yellow-400 mb-6">Day 2: Think, Solve, Impact</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "GreenMind: Sustainable AI for a Better Tomorrow",
-                desc: "Hands-on AI sessions focused on ethics, inclusivity, and sustainability.",
-                image: "/images/events/ai-sustainable.jpg",
-                slug: "greenmind"
-              },
-              {
-                title: "UrbanThink 2025: Designing Cities that Feel Human",
-                desc: "Ideathon to redesign urban spaces using sustainable practices.",
-                image: "/images/events/smart-city.jpg",
-                slug: "urbanthink2025"
-              },
-              {
-                title: "Voices of Fire: Igniting Purpose-Driven Careers with IEEE",
-                desc: "IEEE leaders discuss impact-driven innovation and careers.",
-                image: "/images/events/panel-discussion.jpg",
-                slug: "voicesoffire"
-              }
-            ].map((event, i) => (
-              <div key={i} className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform duration-300">
-                <div className="h-40 w-full bg-white/10">
-                  <img src={event.image} alt={event.title} className="w-full h-full object-cover" />
-                </div>
-                <div className="p-6 flex flex-col justify-between min-h-[230px]">
-                  <div>
-                    <h4 className="text-xl font-bold text-yellow-400 mb-2">{event.title}</h4>
-                    <p className="text-blue-200 text-sm">{event.desc}</p>
-                  </div>
-                  <Link
-                    to={`/events/${event.slug}`}
-                    className="mt-4 inline-block bg-yellow-400 text-blue-900 px-4 py-2 rounded-md text-sm font-semibold hover:bg-yellow-300 transition"
-                  >
-                    View Details
-                  </Link>
-                </div>
-              </div>
-            ))}
+  {/* Day 2 */}
+  <div>
+    <h3 className="text-2xl font-bold text-yellow-400 mb-6">Day 2: Think, Solve, Impact</h3>
+    <div className="grid md:grid-cols-3 gap-8">
+      {[
+        {
+          title: "GreenMind: Sustainable AI for a Better Tomorrow",
+          desc: "Introductory and practical sessions on AI that prioritize green computing, ethics, and inclusive intelligence for SDG-aligned solutions.",
+          image: "/images/events/ai-sustainable.jpg",
+          link: "#event-ai"
+        },
+        {
+          title: "UrbanThink 2025: Designing Cities that Feel Human",
+          desc: "A challenge for students to reimagine urban spaces with sustainable, accessible, and human-first innovations rooted in SDG 11.",
+          image: "/images/events/smart-city.jpg",
+          link: "#event-smartcity"
+        },
+        {
+          title: "Voices of Fire: Igniting Purpose-Driven Careers with IEEE",
+          desc: "A dynamic panel where IEEE visionaries share transformative insights on building careers fueled by innovation, impact, and global responsibility.",
+          image: "/images/events/panel-discussion.jpg",
+          link: "#event-panel"
+        }
+      ].map((event, i) => (
+        <div
+          key={`day2-${i}`}
+          className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform duration-300"
+        >
+          <div className="h-40 w-full bg-white/10">
+            <img
+              src={event.image}
+              alt={event.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="p-6 flex flex-col justify-between min-h-[230px]">
+            <div>
+              <h4 className="text-xl font-bold text-yellow-400 mb-2">{event.title}</h4>
+              <p className="text-blue-200 text-sm leading-relaxed">{event.desc}</p>
+            </div>
+            <a
+              href={event.link}
+              className="mt-4 inline-block bg-yellow-400 text-blue-900 px-4 py-2 rounded-md text-sm font-semibold hover:bg-yellow-300 transition"
+            >
+              View Details
+            </a>
           </div>
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+
+
+
+      
     </div>
   );
 };
